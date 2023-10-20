@@ -1,3 +1,4 @@
+import 'package:character_viewer/repositories/character_repository.dart';
 import 'package:character_viewer/screens/list_screen/list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,7 @@ class ListScreen extends StatelessWidget {
         title: const Text('Character Viewer'),
       ),
       body: BlocProvider(
-        create: (context) => ListCubit(),
+        create: (context) => ListCubit(context.read<CharacterRepository>()),
         child: BlocBuilder<ListCubit, ListState>(
             builder: (context, state) => state.when(
                   initial: () => const Center(

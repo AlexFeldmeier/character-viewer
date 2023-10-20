@@ -1,3 +1,5 @@
+import 'package:character_viewer/data_sources/character_data_source.dart';
+import 'package:character_viewer/repositories/character_repository.dart';
 import 'package:character_viewer/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [],
+      providers: [
+        Provider(
+          create: (context) => CharacterDataSource(),
+        ),
+        Provider(
+          create: (context) => CharacterRepository(context.read<CharacterDataSource>()),
+        ),
+      ],
       child: MaterialApp.router(
         title: 'Character Viewer',
         theme: ThemeData(
