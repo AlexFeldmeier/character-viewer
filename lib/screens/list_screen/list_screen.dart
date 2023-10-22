@@ -1,7 +1,9 @@
+import 'package:character_viewer/constants/theme_constants.dart';
 import 'package:character_viewer/repositories/character_repository.dart';
 import 'package:character_viewer/screens/list_screen/list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class ListScreen extends StatelessWidget {
   const ListScreen({super.key});
@@ -20,21 +22,21 @@ class ListScreen extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   ),
                   loaded: (characters) => ListView.separated(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(ThemeConstants.padding),
                     itemCount: characters.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: 8),
+                    separatorBuilder: (context, index) => const SizedBox(height: ThemeConstants.listTilePadding),
                     itemBuilder: (context, index) {
                       final character = characters[index];
                       return Card(
                         child: InkWell(
                           child: Padding(
-                            padding: const EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(ThemeConstants.padding),
                             child: Text(character.name ?? ''),
                           ),
                           onTap: () {
-                            Navigator.of(context).pushNamed(
-                              '/details',
-                              arguments: character,
+                            context.push(
+                              '/character',
+                              extra: character,
                             );
                           },
                         ),

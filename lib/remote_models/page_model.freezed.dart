@@ -21,32 +21,29 @@ PageModel _$PageModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PageModel {
   @JsonKey(name: 'RelatedTopics')
-  List<CharacterRemoteModel>? get relatedTopics =>
-      throw _privateConstructorUsedError;
+  List<CharacterRemoteModel>? get relatedTopics => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $PageModelCopyWith<PageModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PageModelCopyWith<PageModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PageModelCopyWith<$Res> {
-  factory $PageModelCopyWith(PageModel value, $Res Function(PageModel) then) =
-      _$PageModelCopyWithImpl<$Res, PageModel>;
+  factory $PageModelCopyWith(PageModel value, $Res Function(PageModel) then) = _$PageModelCopyWithImpl<$Res, PageModel>;
+
   @useResult
-  $Res call(
-      {@JsonKey(name: 'RelatedTopics')
-      List<CharacterRemoteModel>? relatedTopics});
+  $Res call({@JsonKey(name: 'RelatedTopics') List<CharacterRemoteModel>? relatedTopics});
 }
 
 /// @nodoc
-class _$PageModelCopyWithImpl<$Res, $Val extends PageModel>
-    implements $PageModelCopyWith<$Res> {
+class _$PageModelCopyWithImpl<$Res, $Val extends PageModel> implements $PageModelCopyWith<$Res> {
   _$PageModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -65,25 +62,19 @@ class _$PageModelCopyWithImpl<$Res, $Val extends PageModel>
 }
 
 /// @nodoc
-abstract class _$$PageModelImplCopyWith<$Res>
-    implements $PageModelCopyWith<$Res> {
-  factory _$$PageModelImplCopyWith(
-          _$PageModelImpl value, $Res Function(_$PageModelImpl) then) =
+abstract class _$$PageModelImplCopyWith<$Res> implements $PageModelCopyWith<$Res> {
+  factory _$$PageModelImplCopyWith(_$PageModelImpl value, $Res Function(_$PageModelImpl) then) =
       __$$PageModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'RelatedTopics')
-      List<CharacterRemoteModel>? relatedTopics});
+  $Res call({@JsonKey(name: 'RelatedTopics') List<CharacterRemoteModel>? relatedTopics});
 }
 
 /// @nodoc
-class __$$PageModelImplCopyWithImpl<$Res>
-    extends _$PageModelCopyWithImpl<$Res, _$PageModelImpl>
+class __$$PageModelImplCopyWithImpl<$Res> extends _$PageModelCopyWithImpl<$Res, _$PageModelImpl>
     implements _$$PageModelImplCopyWith<$Res> {
-  __$$PageModelImplCopyWithImpl(
-      _$PageModelImpl _value, $Res Function(_$PageModelImpl) _then)
-      : super(_value, _then);
+  __$$PageModelImplCopyWithImpl(_$PageModelImpl _value, $Res Function(_$PageModelImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -102,15 +93,13 @@ class __$$PageModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PageModelImpl implements _PageModel {
-  const _$PageModelImpl(
-      {@JsonKey(name: 'RelatedTopics')
-      final List<CharacterRemoteModel>? relatedTopics})
+  const _$PageModelImpl({@JsonKey(name: 'RelatedTopics') final List<CharacterRemoteModel>? relatedTopics})
       : _relatedTopics = relatedTopics;
 
-  factory _$PageModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PageModelImplFromJson(json);
+  factory _$PageModelImpl.fromJson(Map<String, dynamic> json) => _$$PageModelImplFromJson(json);
 
   final List<CharacterRemoteModel>? _relatedTopics;
+
   @override
   @JsonKey(name: 'RelatedTopics')
   List<CharacterRemoteModel>? get relatedTopics {
@@ -131,14 +120,12 @@ class _$PageModelImpl implements _PageModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PageModelImpl &&
-            const DeepCollectionEquality()
-                .equals(other._relatedTopics, _relatedTopics));
+            const DeepCollectionEquality().equals(other._relatedTopics, _relatedTopics));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_relatedTopics));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_relatedTopics));
 
   @JsonKey(ignore: true)
   @override
@@ -155,18 +142,16 @@ class _$PageModelImpl implements _PageModel {
 }
 
 abstract class _PageModel implements PageModel {
-  const factory _PageModel(
-      {@JsonKey(name: 'RelatedTopics')
-      final List<CharacterRemoteModel>? relatedTopics}) = _$PageModelImpl;
+  const factory _PageModel({@JsonKey(name: 'RelatedTopics') final List<CharacterRemoteModel>? relatedTopics}) =
+      _$PageModelImpl;
 
-  factory _PageModel.fromJson(Map<String, dynamic> json) =
-      _$PageModelImpl.fromJson;
+  factory _PageModel.fromJson(Map<String, dynamic> json) = _$PageModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'RelatedTopics')
   List<CharacterRemoteModel>? get relatedTopics;
+
   @override
   @JsonKey(ignore: true)
-  _$$PageModelImplCopyWith<_$PageModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PageModelImplCopyWith<_$PageModelImpl> get copyWith => throw _privateConstructorUsedError;
 }

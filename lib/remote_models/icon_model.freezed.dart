@@ -24,26 +24,26 @@ mixin _$IconModel {
   String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $IconModelCopyWith<IconModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $IconModelCopyWith<IconModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $IconModelCopyWith<$Res> {
-  factory $IconModelCopyWith(IconModel value, $Res Function(IconModel) then) =
-      _$IconModelCopyWithImpl<$Res, IconModel>;
+  factory $IconModelCopyWith(IconModel value, $Res Function(IconModel) then) = _$IconModelCopyWithImpl<$Res, IconModel>;
+
   @useResult
   $Res call({@JsonKey(name: 'URL') String? url});
 }
 
 /// @nodoc
-class _$IconModelCopyWithImpl<$Res, $Val extends IconModel>
-    implements $IconModelCopyWith<$Res> {
+class _$IconModelCopyWithImpl<$Res, $Val extends IconModel> implements $IconModelCopyWith<$Res> {
   _$IconModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -62,23 +62,19 @@ class _$IconModelCopyWithImpl<$Res, $Val extends IconModel>
 }
 
 /// @nodoc
-abstract class _$$IconModelImplCopyWith<$Res>
-    implements $IconModelCopyWith<$Res> {
-  factory _$$IconModelImplCopyWith(
-          _$IconModelImpl value, $Res Function(_$IconModelImpl) then) =
+abstract class _$$IconModelImplCopyWith<$Res> implements $IconModelCopyWith<$Res> {
+  factory _$$IconModelImplCopyWith(_$IconModelImpl value, $Res Function(_$IconModelImpl) then) =
       __$$IconModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'URL') String? url});
 }
 
 /// @nodoc
-class __$$IconModelImplCopyWithImpl<$Res>
-    extends _$IconModelCopyWithImpl<$Res, _$IconModelImpl>
+class __$$IconModelImplCopyWithImpl<$Res> extends _$IconModelCopyWithImpl<$Res, _$IconModelImpl>
     implements _$$IconModelImplCopyWith<$Res> {
-  __$$IconModelImplCopyWithImpl(
-      _$IconModelImpl _value, $Res Function(_$IconModelImpl) _then)
-      : super(_value, _then);
+  __$$IconModelImplCopyWithImpl(_$IconModelImpl _value, $Res Function(_$IconModelImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -99,8 +95,7 @@ class __$$IconModelImplCopyWithImpl<$Res>
 class _$IconModelImpl implements _IconModel {
   const _$IconModelImpl({@JsonKey(name: 'URL') this.url});
 
-  factory _$IconModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$IconModelImplFromJson(json);
+  factory _$IconModelImpl.fromJson(Map<String, dynamic> json) => _$$IconModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'URL')
@@ -138,17 +133,15 @@ class _$IconModelImpl implements _IconModel {
 }
 
 abstract class _IconModel implements IconModel {
-  const factory _IconModel({@JsonKey(name: 'URL') final String? url}) =
-      _$IconModelImpl;
+  const factory _IconModel({@JsonKey(name: 'URL') final String? url}) = _$IconModelImpl;
 
-  factory _IconModel.fromJson(Map<String, dynamic> json) =
-      _$IconModelImpl.fromJson;
+  factory _IconModel.fromJson(Map<String, dynamic> json) = _$IconModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'URL')
   String? get url;
+
   @override
   @JsonKey(ignore: true)
-  _$$IconModelImplCopyWith<_$IconModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$IconModelImplCopyWith<_$IconModelImpl> get copyWith => throw _privateConstructorUsedError;
 }
