@@ -1,9 +1,9 @@
 import 'package:character_viewer/constants/theme_constants.dart';
 import 'package:character_viewer/repositories/character_repository.dart';
+import 'package:character_viewer/router.dart';
 import 'package:character_viewer/screens/list_screen/list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class ListScreen extends StatelessWidget {
   const ListScreen({super.key});
@@ -33,12 +33,7 @@ class ListScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(ThemeConstants.padding),
                             child: Text(character.name ?? ''),
                           ),
-                          onTap: () {
-                            context.push(
-                              '/character',
-                              extra: character,
-                            );
-                          },
+                          onTap: () => AppRouter.goToCharacterDetails(context, character),
                         ),
                       );
                     },
