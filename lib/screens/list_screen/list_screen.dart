@@ -19,12 +19,25 @@ class ListScreen extends StatelessWidget {
                   initial: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  loaded: (characters) => ListView.builder(
+                  loaded: (characters) => ListView.separated(
+                    padding: const EdgeInsets.all(8),
                     itemCount: characters.length,
+                    separatorBuilder: (context, index) => const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       final character = characters[index];
-                      return ListTile(
-                        title: Text(character.name ?? ''),
+                      return Card(
+                        child: InkWell(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Text(character.name ?? ''),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              '/details',
+                              arguments: character,
+                            );
+                          },
+                        ),
                       );
                     },
                   ),
