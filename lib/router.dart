@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:character_viewer/screens/details_screen/details_screen.dart';
 import 'package:character_viewer/screens/list_screen/list_screen.dart';
 import 'package:character_viewer/utils/form_factor_detector.dart';
@@ -9,19 +11,16 @@ import 'domain_models/character_domain_model.dart';
 abstract class AppRouter {
   static final router = GoRouter(
     initialLocation: '/',
-    redirect: (context, state) {
-      if (state.fullPath == '/') {
-        if (FormFactorDetector.isTablet(context)) {
-          return '/tablet';
-        } else {
-          return '/list';
-        }
-      }
-      return null;
-    },
     routes: [
       GoRoute(
         path: '/',
+        redirect: (context, state) {
+          if (FormFactorDetector.isTablet(context)) {
+            return '/tablet';
+          } else {
+            return '/list';
+          }
+        },
         pageBuilder: (context, state) => const NoTransitionPage(
           child: Scaffold(),
         ),
@@ -32,31 +31,31 @@ abstract class AppRouter {
         routes: [
           GoRoute(
             path: 'character',
-            builder: (context, state) => DetailsScreen(
-                character: state.extra is CharacterDomainModel ? state.extra as CharacterDomainModel : null),
+            builder: (context, state) =>
+                DetailsScreen(character: CharacterDomainModel.fromJson(jsonDecode(state.extra.toString()))),
           ),
         ],
       ),
       GoRoute(
         path: '/tablet',
         pageBuilder: (context, state) => NoTransitionPage(
-          child: _TabletMasterDetailView(
-              character: state.extra is CharacterDomainModel ? state.extra as CharacterDomainModel : null),
+          child: _TabletMasterDetailView(character: CharacterDomainModel.fromJson(jsonDecode(state.extra.toString()))),
         ),
       ),
     ],
   );
 
   static void goToCharacterDetails(BuildContext context, CharacterDomainModel character) {
+    final extra = jsonEncode(character.toJson());
     if (FormFactorDetector.isTablet(context)) {
       context.go(
         '/tablet',
-        extra: character,
+        extra: extra,
       );
     } else {
       context.go(
         '/list/character',
-        extra: character,
+        extra: extra,
       );
     }
   }
