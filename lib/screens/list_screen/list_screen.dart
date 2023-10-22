@@ -22,31 +22,38 @@ class ListScreen extends StatelessWidget {
                   initial: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  loaded: (characters) => ListView.separated(
-                    padding: const EdgeInsets.all(ThemeConstants.padding),
-                    itemCount: characters.length + 1,
-                    separatorBuilder: (context, index) => const SizedBox(height: ThemeConstants.listTilePadding),
-                    itemBuilder: (context, index) {
-                      if (index == 0) {
-                        return TextField(
+                  loaded: (characters) => Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(ThemeConstants.padding),
+                        child: TextField(
                           decoration: const InputDecoration(
                             hintText: 'Search',
                             border: OutlineInputBorder(),
                           ),
                           onChanged: (value) => context.read<ListCubit>().filterCharacters(value),
-                        );
-                      }
-                      final character = characters[index - 1];
-                      return Card(
-                        child: InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.all(ThemeConstants.padding),
-                            child: Text(character.name ?? ''),
-                          ),
-                          onTap: () => AppRouter.goToCharacterDetails(context, character),
                         ),
-                      );
-                    },
+                      ),
+                      Expanded(
+                        child: ListView.separated(
+                          padding: const EdgeInsets.all(ThemeConstants.padding),
+                          itemCount: characters.length,
+                          separatorBuilder: (context, index) => const SizedBox(height: ThemeConstants.listTilePadding),
+                          itemBuilder: (context, index) {
+                            final character = characters[index];
+                            return Card(
+                              child: InkWell(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(ThemeConstants.padding),
+                                  child: Text(character.name ?? ''),
+                                ),
+                                onTap: () => AppRouter.goToCharacterDetails(context, character),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                   error: () => const Center(
                     child: Text('Error'),
