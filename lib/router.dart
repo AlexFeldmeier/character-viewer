@@ -15,20 +15,16 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        pageBuilder: (context, state) {
-          if (_isTablet(context)) {
-            return const MaterialPage(child: _TabletMasterDetailView());
-          }
-          return const MaterialPage(child: ListScreen());
-        },
+        builder: (context, state) => const ListScreen(),
         routes: [
           GoRoute(
             path: 'character',
-            pageBuilder: (context, state) {
+            builder: (context, state) {
+              final character = state.extra as CharacterDomainModel;
               if (_isTablet(context)) {
-                return const MaterialPage(child: Scaffold());
+                return _TabletMasterDetailView(character: character);
               }
-              return MaterialPage(child: DetailsScreen(character: state.extra as CharacterDomainModel));
+              return DetailsScreen(character: character);
             },
           ),
         ],
@@ -38,9 +34,9 @@ abstract class AppRouter {
 }
 
 class _TabletMasterDetailView extends StatelessWidget {
-  final CharacterDomainModel? character;
+  final CharacterDomainModel character;
 
-  const _TabletMasterDetailView({this.character});
+  const _TabletMasterDetailView({required this.character});
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +45,9 @@ class _TabletMasterDetailView extends StatelessWidget {
         const Expanded(
           child: ListScreen(),
         ),
-        if (character != null)
-          Expanded(
-            child: DetailsScreen(character: character!),
-          ),
+        Expanded(
+          child: DetailsScreen(character: character),
+        ),
       ],
     );
   }
