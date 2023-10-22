@@ -1,3 +1,4 @@
+import 'package:character_viewer/app_config.dart';
 import 'package:character_viewer/constants/theme_constants.dart';
 import 'package:character_viewer/repositories/character_repository.dart';
 import 'package:character_viewer/router.dart';
@@ -12,10 +13,10 @@ class ListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Character Viewer'),
+        title: Text(context.read<AppConfig>().title),
       ),
       body: BlocProvider(
-        create: (context) => ListCubit(context.read<CharacterRepository>()),
+        create: (context) => ListCubit(context.read<CharacterRepository>(), context.read<AppConfig>().query),
         child: BlocBuilder<ListCubit, ListState>(
             builder: (context, state) => state.when(
                   initial: () => const Center(
