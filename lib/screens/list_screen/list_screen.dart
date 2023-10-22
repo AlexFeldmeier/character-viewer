@@ -24,10 +24,19 @@ class ListScreen extends StatelessWidget {
                   ),
                   loaded: (characters) => ListView.separated(
                     padding: const EdgeInsets.all(ThemeConstants.padding),
-                    itemCount: characters.length,
+                    itemCount: characters.length + 1,
                     separatorBuilder: (context, index) => const SizedBox(height: ThemeConstants.listTilePadding),
                     itemBuilder: (context, index) {
-                      final character = characters[index];
+                      if (index == 0) {
+                        return TextField(
+                          decoration: const InputDecoration(
+                            hintText: 'Search',
+                            border: OutlineInputBorder(),
+                          ),
+                          onChanged: (value) => context.read<ListCubit>().filterCharacters(value),
+                        );
+                      }
+                      final character = characters[index - 1];
                       return Card(
                         child: InkWell(
                           child: Padding(

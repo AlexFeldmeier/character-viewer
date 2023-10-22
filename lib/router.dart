@@ -32,14 +32,14 @@ abstract class AppRouter {
         routes: [
           GoRoute(
             path: 'character',
-            builder: (context, state) => DetailsScreen(character: state.extra as CharacterDomainModel?),
+            builder: (context, state) => DetailsScreen(character: state.extra is CharacterDomainModel ? state.extra as CharacterDomainModel : null),
           ),
         ],
       ),
       GoRoute(
         path: '/tablet',
         pageBuilder: (context, state) => NoTransitionPage(
-          child: _TabletMasterDetailView(character: state.extra as CharacterDomainModel?),
+          child: _TabletMasterDetailView(character: state.extra is CharacterDomainModel ? state.extra as CharacterDomainModel : null),
         ),
       ),
     ],
