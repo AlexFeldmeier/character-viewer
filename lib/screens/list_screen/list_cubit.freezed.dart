@@ -23,6 +23,7 @@ mixin _$ListState {
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -38,6 +39,7 @@ mixin _$ListState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -45,6 +47,7 @@ mixin _$ListState {
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -64,35 +67,29 @@ mixin _$ListState {
 
 /// @nodoc
 abstract class $ListStateCopyWith<$Res> {
-  factory $ListStateCopyWith(ListState value, $Res Function(ListState) then) =
-      _$ListStateCopyWithImpl<$Res, ListState>;
+  factory $ListStateCopyWith(ListState value, $Res Function(ListState) then) = _$ListStateCopyWithImpl<$Res, ListState>;
 }
 
 /// @nodoc
-class _$ListStateCopyWithImpl<$Res, $Val extends ListState>
-    implements $ListStateCopyWith<$Res> {
+class _$ListStateCopyWithImpl<$Res, $Val extends ListState> implements $ListStateCopyWith<$Res> {
   _$ListStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ListStateCopyWithImpl<$Res, _$InitialImpl>
+class __$$InitialImplCopyWithImpl<$Res> extends _$ListStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -107,8 +104,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -189,20 +185,16 @@ abstract class _Initial implements ListState {
 
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+  factory _$$LoadedImplCopyWith(_$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<CharacterDomainModel> characters});
 }
 
 /// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$ListStateCopyWithImpl<$Res, _$LoadedImpl>
+class __$$LoadedImplCopyWithImpl<$Res> extends _$ListStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-      : super(_value, _then);
+  __$$LoadedImplCopyWithImpl(_$LoadedImpl _value, $Res Function(_$LoadedImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -221,14 +213,13 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(final List<CharacterDomainModel> characters)
-      : _characters = characters;
+  const _$LoadedImpl(final List<CharacterDomainModel> characters) : _characters = characters;
 
   final List<CharacterDomainModel> _characters;
   @override
   List<CharacterDomainModel> get characters {
     if (_characters is EqualUnmodifiableListView) return _characters;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_characters);
   }
 
@@ -242,19 +233,16 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._characters, _characters));
+            const DeepCollectionEquality().equals(other._characters, _characters));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_characters));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_characters));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith => __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -326,29 +314,22 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements ListState {
-  const factory _Loaded(final List<CharacterDomainModel> characters) =
-      _$LoadedImpl;
+  const factory _Loaded(final List<CharacterDomainModel> characters) = _$LoadedImpl;
 
   List<CharacterDomainModel> get characters;
   @JsonKey(ignore: true)
-  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+  factory _$$ErrorImplCopyWith(_$ErrorImpl value, $Res Function(_$ErrorImpl) then) = __$$ErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$ListStateCopyWithImpl<$Res, _$ErrorImpl>
+class __$$ErrorImplCopyWithImpl<$Res> extends _$ListStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
-      : super(_value, _then);
+  __$$ErrorImplCopyWithImpl(_$ErrorImpl _value, $Res Function(_$ErrorImpl) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -363,8 +344,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ErrorImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ErrorImpl);
   }
 
   @override

@@ -21,32 +21,34 @@ CharacterDomainModel _$CharacterDomainModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CharacterDomainModel {
   String? get imageUrl => throw _privateConstructorUsedError;
+
   String? get name => throw _privateConstructorUsedError;
+
   String? get details => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $CharacterDomainModelCopyWith<CharacterDomainModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CharacterDomainModelCopyWith<CharacterDomainModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CharacterDomainModelCopyWith<$Res> {
-  factory $CharacterDomainModelCopyWith(CharacterDomainModel value,
-          $Res Function(CharacterDomainModel) then) =
+  factory $CharacterDomainModelCopyWith(CharacterDomainModel value, $Res Function(CharacterDomainModel) then) =
       _$CharacterDomainModelCopyWithImpl<$Res, CharacterDomainModel>;
+
   @useResult
   $Res call({String? imageUrl, String? name, String? details});
 }
 
 /// @nodoc
-class _$CharacterDomainModelCopyWithImpl<$Res,
-        $Val extends CharacterDomainModel>
+class _$CharacterDomainModelCopyWithImpl<$Res, $Val extends CharacterDomainModel>
     implements $CharacterDomainModelCopyWith<$Res> {
   _$CharacterDomainModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -75,11 +77,11 @@ class _$CharacterDomainModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$CharacterDomainModelImplCopyWith<$Res>
-    implements $CharacterDomainModelCopyWith<$Res> {
-  factory _$$CharacterDomainModelImplCopyWith(_$CharacterDomainModelImpl value,
-          $Res Function(_$CharacterDomainModelImpl) then) =
+abstract class _$$CharacterDomainModelImplCopyWith<$Res> implements $CharacterDomainModelCopyWith<$Res> {
+  factory _$$CharacterDomainModelImplCopyWith(
+          _$CharacterDomainModelImpl value, $Res Function(_$CharacterDomainModelImpl) then) =
       __$$CharacterDomainModelImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String? imageUrl, String? name, String? details});
@@ -89,8 +91,8 @@ abstract class _$$CharacterDomainModelImplCopyWith<$Res>
 class __$$CharacterDomainModelImplCopyWithImpl<$Res>
     extends _$CharacterDomainModelCopyWithImpl<$Res, _$CharacterDomainModelImpl>
     implements _$$CharacterDomainModelImplCopyWith<$Res> {
-  __$$CharacterDomainModelImplCopyWithImpl(_$CharacterDomainModelImpl _value,
-      $Res Function(_$CharacterDomainModelImpl) _then)
+  __$$CharacterDomainModelImplCopyWithImpl(
+      _$CharacterDomainModelImpl _value, $Res Function(_$CharacterDomainModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -122,8 +124,7 @@ class __$$CharacterDomainModelImplCopyWithImpl<$Res>
 class _$CharacterDomainModelImpl implements _CharacterDomainModel {
   const _$CharacterDomainModelImpl({this.imageUrl, this.name, this.details});
 
-  factory _$CharacterDomainModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CharacterDomainModelImplFromJson(json);
+  factory _$CharacterDomainModelImpl.fromJson(Map<String, dynamic> json) => _$$CharacterDomainModelImplFromJson(json);
 
   @override
   final String? imageUrl;
@@ -142,8 +143,7 @@ class _$CharacterDomainModelImpl implements _CharacterDomainModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CharacterDomainModelImpl &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl) &&
+            (identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.details, details) || other.details == details));
   }
@@ -155,10 +155,8 @@ class _$CharacterDomainModelImpl implements _CharacterDomainModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CharacterDomainModelImplCopyWith<_$CharacterDomainModelImpl>
-      get copyWith =>
-          __$$CharacterDomainModelImplCopyWithImpl<_$CharacterDomainModelImpl>(
-              this, _$identity);
+  _$$CharacterDomainModelImplCopyWith<_$CharacterDomainModelImpl> get copyWith =>
+      __$$CharacterDomainModelImplCopyWithImpl<_$CharacterDomainModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -169,22 +167,21 @@ class _$CharacterDomainModelImpl implements _CharacterDomainModel {
 }
 
 abstract class _CharacterDomainModel implements CharacterDomainModel {
-  const factory _CharacterDomainModel(
-      {final String? imageUrl,
-      final String? name,
-      final String? details}) = _$CharacterDomainModelImpl;
+  const factory _CharacterDomainModel({final String? imageUrl, final String? name, final String? details}) =
+      _$CharacterDomainModelImpl;
 
-  factory _CharacterDomainModel.fromJson(Map<String, dynamic> json) =
-      _$CharacterDomainModelImpl.fromJson;
+  factory _CharacterDomainModel.fromJson(Map<String, dynamic> json) = _$CharacterDomainModelImpl.fromJson;
 
   @override
   String? get imageUrl;
+
   @override
   String? get name;
+
   @override
   String? get details;
+
   @override
   @JsonKey(ignore: true)
-  _$$CharacterDomainModelImplCopyWith<_$CharacterDomainModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$CharacterDomainModelImplCopyWith<_$CharacterDomainModelImpl> get copyWith => throw _privateConstructorUsedError;
 }
